@@ -1,0 +1,4 @@
+# AI Intelligent Student Learning Companion - Main Requirements
+# Refer to backend/requirements.txt for backend specific dependencies
+
+-r backend/requirements.txt
