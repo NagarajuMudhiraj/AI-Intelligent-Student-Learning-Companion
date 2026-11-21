@@ -128,11 +128,8 @@ class BulkImportRequest(BaseModel):
     tasks: List[BulkImportTaskItem]
 
 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
-    google_api_key=settings.GEMINI_API_KEY,
-    temperature=0.3
-)
+from app.core.llm import get_chat_llm
+llm = get_chat_llm(temperature=0.3)
 
 PLANNER_PROMPT = """You are an expert tutor and study planner. Generate a week-by-week study schedule for the syllabus or topics provided below for a total duration of {duration_days} days. Divide the content into weekly blocks.
 

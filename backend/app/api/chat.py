@@ -32,12 +32,8 @@ from bson import ObjectId
 
 router = APIRouter()
 
-# Initialize Gemini LLM
-llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
-    google_api_key=settings.GEMINI_API_KEY,
-    temperature=0.3,
-)
+from app.core.llm import get_chat_llm
+llm = get_chat_llm(temperature=0.3)
 
 OPTIMIZED_RAG_PROMPT_TEMPLATE = """You are an AI Student Companion. Help the student based on the context provided.
 Adapt your response length and format based on the question:

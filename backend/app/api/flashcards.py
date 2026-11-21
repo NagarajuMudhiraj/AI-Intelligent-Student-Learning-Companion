@@ -49,11 +49,8 @@ def count_due_cards(cards: list, now: datetime) -> int:
     return count
 
 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
-    google_api_key=settings.GEMINI_API_KEY,
-    temperature=0.3
-)
+from app.core.llm import get_chat_llm
+llm = get_chat_llm(temperature=0.3)
 
 FLASHCARD_PROMPT = """You are an expert educator. Create {num_cards} educational flashcards from the following content.
 

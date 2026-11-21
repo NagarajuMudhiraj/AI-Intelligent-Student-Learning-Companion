@@ -18,11 +18,8 @@ from app.core.prompt_security import detect_prompt_injection, sanitize_rag_conte
 
 router = APIRouter()
 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
-    google_api_key=settings.GEMINI_API_KEY,
-    temperature=0.4
-)
+from app.core.llm import get_chat_llm
+llm = get_chat_llm(temperature=0.4)
 
 QUIZ_PROMPT = """You are an expert educator. Generate {num_questions} multiple-choice quiz questions at {difficulty} difficulty level.
 

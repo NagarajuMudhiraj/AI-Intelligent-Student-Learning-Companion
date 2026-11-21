@@ -14,11 +14,8 @@ _PROFILE_CACHE: Dict[str, tuple] = {}
 CACHE_TTL_SECONDS = 600  # 10 minutes
 
 # Initialize Gemini LLM for summarization tasks
-llm_summarizer = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
-    google_api_key=settings.GEMINI_API_KEY,
-    temperature=0.2,
-)
+from app.core.llm import get_chat_llm
+llm_summarizer = get_chat_llm(temperature=0.2)
 
 # ── User Profile Cache ─────────────────────────────────────────────────────────
 
