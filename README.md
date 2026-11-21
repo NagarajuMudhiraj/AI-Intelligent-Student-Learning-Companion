@@ -10,6 +10,7 @@
 
 **Next-Generation Personalized Academic Copilot Powered by Google Gemini, RAG & Vector Search**
 
+[![Latest Release](https://img.shields.io/github/v/release/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion?style=for-the-badge&logo=github&color=38BDF8)](https://github.com/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion/releases/latest)
 [![Interactive Architecture](https://img.shields.io/badge/Architecture-Interactive_Viewer-7928CA?style=for-the-badge&logo=googlechrome&logoColor=white)](https://nagarajumudhiraj.github.io/AI-Intelligent-Student-Learning-Companion/)
 [![GitHub Stars](https://img.shields.io/github/stars/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion?style=for-the-badge&logo=github&color=FFD700)](https://github.com/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion?style=for-the-badge&logo=github&color=60A5FA)](https://github.com/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion/network/members)
