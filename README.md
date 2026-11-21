@@ -1,245 +1,287 @@
-# 🎓 AI – Intelligent Student Learning Companion
+<div align="center">
 
-## 📌 Overview
+# 🎓 AI Intelligent Student Learning Companion
 
-An AI-powered Student Learning Companion designed to help students learn smarter, organize study materials, and interact with academic content through natural language. The platform combines **Generative AI, Retrieval-Augmented Generation (RAG), Vector Search, and Document Intelligence** to provide personalized, interactive learning assistance.
+**Next-Generation Personalized Academic Copilot Powered by Google Gemini, RAG & Vector Search**
 
-Students can upload study materials, chat with an AI assistant that cites their documents, generate interactive multiple-choice quizzes, create smart flashcards, receive AI-powered study schedules, explore career pathways, and track study analytics.
+[![GitHub Stars](https://img.shields.io/github/stars/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion?style=for-the-badge&logo=github&color=FFD700)](https://github.com/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion?style=for-the-badge&logo=github&color=60A5FA)](https://github.com/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion/network/members)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](CONTRIBUTING.md)
 
----
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115%2B-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![React 19](https://img.shields.io/badge/React-19.2-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0%2B-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Google Gemini](https://img.shields.io/badge/AI-Google_Gemini-4285F4?style=flat-square&logo=google&logoColor=white)](https://aistudio.google.com/)
+[![ChromaDB](https://img.shields.io/badge/Vector_DB-ChromaDB-orange?style=flat-square)](https://www.trychroma.com/)
+[![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?style=flat-square&logo=docker&logoColor=white)](docker-compose.yml)
+[![PWA](https://img.shields.io/badge/PWA-Ready-purple?style=flat-square&logo=pwa&logoColor=white)](https://web.dev/progressive-web-apps/)
 
-## 🚀 Features
+<p align="center">
+  <a href="#-key-features">Key Features</a> •
+  <a href="#-architecture">Architecture</a> •
+  <a href="#-1-click-docker-run">1-Click Docker</a> •
+  <a href="#-local-development">Local Setup</a> •
+  <a href="#-cloud-deployment">Cloud Deploy</a> •
+  <a href="#-api-reference">API Reference</a> •
+  <a href="#-roadmap">Roadmap</a> •
+  <a href="#-contributing">Contributing</a>
+</p>
 
-### 📚 Smart Document Hub & RAG
-* **Multi-Format Support:** Upload and parse `PDF`, `DOCX`, `PPTX`, and `TXT` files.
-* **Automatic Chunking & Embeddings:** Documents are automatically split and vectorized using `gemini-embedding-2`.
-* **ChromaDB Vector Store:** Fast semantic search across your personal academic library.
-* **Context-Aware Answers:** AI responses grounded directly in your uploaded notes and textbooks.
-
-### 🤖 AI Study Assistant
-* Natural language conversation powered by Google Gemini.
-* Subject-specific explanations, step-by-step problem solving, and concept clarification.
-* Conversation session history management with semantic caching for fast responses.
-
-### 📝 AI Quiz Generator
-* Instantly generate custom multiple-choice quizzes directly from your uploaded materials or custom topics.
-* Configurable difficulty levels (Easy, Medium, Hard).
-* Instant answer evaluation, scoring, and detailed explanations for every question.
-
-### 🗂️ Interactive Flashcards
-* Automatically extract key concepts, definitions, and formulas into study flashcards.
-* Interactive 3D flip card UI for spaced repetition and self-testing.
-* Progress tracking and mastery status.
-
-### 📅 AI Study Planner & Task Management
-* Generate personalized, week-by-week study timetables based on your syllabus or exam dates.
-* Task tracking with completion status, due dates, and priority levels.
-
-### 💼 Career Pathway & Skill Advisor
-* Analyzes your studied subjects and documents to recommend matching career options.
-* Outlines recommended skills to acquire, industry outlooks, and actionable learning milestones.
-
-### 📊 Learning Analytics & Dashboard
-* Real-time metrics on documents uploaded, quizzes completed, questions answered, and accuracy rates.
-* Visual study trends and weekly progress tracking.
-
-### 📱 Progressive Web App (PWA)
-* Installable directly on desktop and mobile devices (Android & iOS).
-* Built-in service workers and offline asset caching.
+</div>
 
 ---
 
-## 🏗️ System Architecture
+## 💡 What is AI Student Learning Companion?
 
-```text
-[ React + Vite + Tailwind Frontend ]
-                 │
-                 │ HTTP / REST / JWT
-                 ▼
-[ FastAPI Backend (Python) ]
-     │                 │
-     │ LangChain       ├─► [ MongoDB / MongoMock Fallback ] (Users, Chats, Quizzes, Planner)
-     │                 │
-     ├─► [ ChromaDB ] (Vector Store for Document Chunks)
-     │
-     ▼
-[ Google Gemini API ] (Gemini 3.5 Flash Lite & Gemini Embeddings)
+Modern students face information overload across dense textbooks, lecture slide decks, and disparate PDF notes. Passive reading rarely leads to high retention.
+
+**AI Intelligent Student Learning Companion** bridges this gap by converting static academic materials into an active, conversational, and tailored learning environment:
+1. **Document Grounding (RAG):** Upload textbooks or lecture slides and chat directly with an assistant that quotes your exact syllabus.
+2. **Instant Self-Testing:** Automatically turn lecture notes into interactive multiple-choice quizzes and 3D study flashcards.
+3. **Structured Timetables:** Automatically generate dynamic study schedules based on exam dates and chapter complexity.
+4. **Career Alignment:** Map studied subjects to high-demand industry careers and recommended skill milestones.
+
+---
+
+## 🚀 Key Features
+
+| Feature | Description | Tech Highlight |
+|---|---|---|
+| 📚 **Smart RAG Hub** | Upload `PDF`, `DOCX`, `PPTX`, `TXT`. Instant chunking and semantic vector storage. | PyMuPDF, ChromaDB, Gemini Embeddings |
+| 🤖 **AI Study Chat** | Chat with conversational memory grounded in uploaded notes with source citations. | Gemini 3.5 Flash Lite, LangChain |
+| 📝 **Auto Quiz Generator** | Generate topic-specific or document-derived multiple-choice tests with detailed explanations. | Dynamic Bloom's Taxonomy, Pydantic |
+| 🗂️ **Interactive 3D Flashcards** | Spaced-repetition flip cards for definitions, formulas, and critical concepts. | CSS 3D Transforms, Local Storage |
+| 📅 **AI Study Planner** | Personalized week-by-week study timetables with milestone tracking. | Automated task scheduling |
+| 💼 **Career & Skills Advisor** | Evaluates course materials to suggest aligned career paths and learning roadmaps. | Gemini AI curriculum analysis |
+| 📊 **Learning Analytics** | Real-time performance dashboards tracking study consistency and quiz scores. | Visual charts & PDF export |
+| 📱 **Progressive Web App** | Install directly onto desktop, Android, or iOS with offline caching. | Vite PWA Plugin, Service Workers |
+
+---
+
+## 🏗️ Architecture
+
+```mermaid
+flowchart TD
+    subgraph Client["💻 Frontend (React 19 + TypeScript + Vite)"]
+        UI["Tailwind CSS & Lucide Icons"]
+        PWA["PWA Service Worker & Cache"]
+        ClientAuth["JWT & Google OAuth Guard"]
+    end
+
+    subgraph BackendCore["⚡ Backend Core (FastAPI Python)"]
+        API["REST API Router (/api/v1)"]
+        RAG["RAG Pipeline (LangChain)"]
+        Cache["Semantic Cache Service"]
+        DBLayer["Mongo Driver + MongoMock Fallback"]
+    end
+
+    subgraph AI["🧠 Google AI Services"]
+        LLM["Google Gemini 3.5 Flash Lite"]
+        Embeddings["Gemini Embedding 2 (3072 dims)"]
+    end
+
+    subgraph Data["💾 Persistence Layer"]
+        Chroma["ChromaDB (Vector Database)"]
+        Mongo[("MongoDB / Atlas Database")]
+    end
+
+    UI -->|HTTP / JSON| API
+    API --> ClientAuth
+    API --> RAG
+    API --> Cache
+    RAG -->|Vector Embeddings| Embeddings
+    RAG -->|Semantic Query| Chroma
+    RAG -->|Context-Augmented Prompt| LLM
+    API --> DBLayer
+    DBLayer --> Mongo
+```
+
+> 📐 **Interactive Architecture View:** Explore the comprehensive system diagram with live node inspections in [`student-companion-architecture.html`](student-companion-architecture.html).
+
+---
+
+## 🐳 1-Click Docker Run
+
+The easiest way to get the entire full-stack application running with one command:
+
+### 1. Clone & Set Environment
+```bash
+git clone https://github.com/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion.git
+cd AI-Intelligent-Student-Learning-Companion
+cp .env.example .env
+```
+*Edit `.env` and paste your free [Google Gemini API Key](https://aistudio.google.com/).*
+
+### 2. Start Containers
+```bash
+docker-compose up --build -d
+```
+
+### 3. Open Application
+- 🖥️ **Frontend Web App:** [http://localhost:5173](http://localhost:5173)
+- ⚙️ **FastAPI Backend:** [http://localhost:8000](http://localhost:8000)
+- 📖 **Interactive Swagger API Docs:** [http://localhost:8000/docs](http://localhost:8000/docs)
+
+To stop the containers:
+```bash
+docker-compose down
 ```
 
 ---
 
-## 🛠️ Technology Stack
-
-### Frontend
-* **Framework:** React 19, TypeScript, Vite
-* **Styling:** Tailwind CSS, Lucide React icons
-* **Routing & State:** React Router v7
-* **Markdown & Syntax:** `react-markdown`, `react-syntax-highlighter`
-* **PDF Export & Offline:** `jspdf`, `html2canvas`, Vite PWA (`vite-plugin-pwa`)
-* **Auth Integration:** `@react-oauth/google`
-
-### Backend
-* **Server Framework:** FastAPI, Uvicorn
-* **Database & ODM:** Motor (Async MongoDB Driver), PyMongo
-* **In-Memory Fallback:** `mongomock-motor` (runs without external MongoDB installed)
-* **Data Validation:** Pydantic v2, `pydantic-settings`, `email-validator`
-* **Security & Auth:** Python-Jose (JWT), Passlib, Bcrypt
-
-### AI & Vector Database
-* **LLM Engine:** Google Gemini (`gemini-3.5-flash-lite` / `gemini-3.8-flash`) via `langchain-google-genai`
-* **Embedding Model:** `models/gemini-embedding-2` (3072 dimensions)
-* **Vector Store:** ChromaDB (Local persistent vector database)
-* **Document Loaders:** PyMuPDF (`fitz`), `python-docx` / `docx2txt`, `python-pptx`
-
----
-
-## 📂 Project Structure
-
-```text
-AI-Intelligent-Student-Learning-Companion/
-│
-├── frontend/
-│   ├── public/                 # Favicons, PWA icons, manifest
-│   ├── src/
-│   │   ├── components/         # Reusable UI components & AuthGuard
-│   │   ├── pages/              # Dashboard, Chat, Documents, Quizzes, Flashcards, Planner, etc.
-│   │   ├── lib/                # API client & utilities
-│   │   ├── App.tsx             # Application routing
-│   │   └── main.tsx            # Entry point & Google OAuth Provider
-│   ├── package.json
-│   ├── vite.config.ts
-│   └── .env                    # Frontend environment configuration
-│
-├── backend/
-│   ├── app/
-│   │   ├── api/                # API route controllers (auth, chat, documents, quiz, etc.)
-│   │   ├── core/               # App configuration, security, LLM wrapper
-│   │   ├── db/                 # MongoDB connection & in-memory fallback
-│   │   ├── models/             # Pydantic schemas and database models
-│   │   ├── services/           # RAG pipeline, ChromaDB store, semantic caching
-│   │   └── main.py             # FastAPI entry point & CORS configuration
-│   ├── requirements.txt
-│   └── .env                    # Backend environment configuration
-│
-└── README.md
-```
-
----
-
-## ⚙️ Installation & Setup
+## 💻 Local Development
 
 ### 1. Prerequisites
-* **Python:** 3.10 or higher
-* **Node.js:** v18 or higher (v20+ recommended)
-* **npm:** v9 or higher
-* **Google Gemini API Key:** Get a free key from [Google AI Studio](https://aistudio.google.com/)
+- **Python 3.10+**
+- **Node.js 18+ (Node 20 recommended)**
+- **Google Gemini API Key** ([Get free key here](https://aistudio.google.com/))
+- *(Optional)* MongoDB running locally or a MongoDB Atlas URI (if omitted, the backend automatically uses an built-in in-memory database).
 
 ---
 
 ### 2. Backend Setup
 
-1. Open a terminal and navigate to `backend`:
-   ```bash
-   cd backend
-   ```
+```bash
+cd backend
 
-2. Create and activate a Python virtual environment:
-   * **Windows:**
-     ```bash
-     python -m venv venv
-     venv\Scripts\activate
-     ```
-   * **macOS / Linux:**
-     ```bash
-     python3 -m venv venv
-     source venv/bin/activate
-     ```
+# Create virtual environment
+python -m venv venv
 
-3. Install the dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+# Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
 
-4. Configure environment variables in `backend/.env`:
-   ```env
-   PROJECT_NAME="AI Student Companion"
-   VERSION="1.0.0"
-   API_V1_STR="/api/v1"
+# Install dependencies
+pip install -r requirements.txt
 
-   # MongoDB (Leave as localhost or provide a MongoDB Atlas URI)
-   # If no MongoDB is reachable, the backend automatically uses an in-memory database
-   MONGODB_URL="mongodb://localhost:27017"
-   DATABASE_NAME="aistudentdb"
+# Configure environment
+cp .env.example .env
+# Edit backend/.env and insert your GEMINI_API_KEY
 
-   # Security
-   SECRET_KEY="generate_a_random_32_byte_hex_string"
-   ALGORITHM="HS256"
-   ACCESS_TOKEN_EXPIRE_MINUTES=1440
-
-   # Google AI
-   GEMINI_API_KEY="your_actual_gemini_api_key_here"
-   GOOGLE_CLIENT_ID="your_google_oauth_client_id.apps.googleusercontent.com"
-
-   # CORS
-   CORS_ORIGINS="http://localhost:5173,http://localhost,http://127.0.0.1:5173"
-   ```
-
-5. Run the backend server:
-   ```bash
-   uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-   ```
-
-   * **API Base:** [http://localhost:8000](http://localhost:8000)
-   * **Swagger Interactive Docs:** [http://localhost:8000/docs](http://localhost:8000/docs)
-   * **ReDoc API Specs:** [http://localhost:8000/redoc](http://localhost:8000/redoc)
+# Start server with live reload
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+```
 
 ---
 
 ### 3. Frontend Setup
 
-1. Open a second terminal and navigate to `frontend`:
-   ```bash
-   cd frontend
-   ```
+```bash
+cd frontend
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+# Install dependencies
+npm install
 
-3. Configure environment variables in `frontend/.env`:
-   ```env
-   VITE_API_URL=http://localhost:8000/api/v1
-   VITE_GOOGLE_CLIENT_ID=your_google_oauth_client_id.apps.googleusercontent.com
-   ```
+# Configure environment
+cp .env.example .env
 
-4. Start the Vite development server:
-   ```bash
-   npm run dev
-   ```
+# Start Vite dev server
+npm run dev
+```
 
-   * **Frontend Application:** [http://localhost:5173](http://localhost:5173)
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-## 🎯 Use Cases
+## ☁️ Free Cloud Deployment
 
-* **Interactive Document Study:** Upload long course materials or lecture slides and query them in plain English.
-* **Instant Exam Prep:** Generate chapter-wise revision quizzes and practice key questions with instant feedback.
-* **Quick Memorization:** Test yourself with auto-generated flip cards for formulas, vocabulary, and concepts.
-* **Organized Revision Schedules:** Build structured weekly study timetables tailored to upcoming test dates.
-* **Career Direction:** Align coursework with recommended future industries, job roles, and required technical skills.
+### Frontend ➔ Vercel
+1. Fork this repository.
+2. Go to [Vercel](https://vercel.com/) and click **Add New Project**.
+3. Select your fork and set **Root Directory** to `frontend`.
+4. Set Environment Variables:
+   - `VITE_API_URL`: Your deployed backend URL + `/api/v1`
+   - `VITE_GOOGLE_CLIENT_ID`: *(Optional)* Your Google OAuth Client ID
+5. Click **Deploy**. SPA routing is pre-configured in `frontend/vercel.json`.
 
 ---
 
-## 👨‍💻 Developed By
+### Backend ➔ Render
+1. Go to [Render](https://render.com/) and create a **New Web Service**.
+2. Connect this repository (Render Blueprint `render.yaml` is pre-configured).
+3. Set Environment Variables:
+   - `GEMINI_API_KEY`: Your Google Gemini API Key
+   - `MONGODB_URL`: Your MongoDB Atlas connection string (or use in-memory fallback)
+   - `SECRET_KEY`: A 32-character random string for JWT security
+4. Deploy service!
+
+---
+
+## 📡 API Reference
+
+Explore the full interactive documentation at `/docs` (Swagger UI) or `/redoc` (ReDoc).
+
+| Category | Method | Endpoint | Description | Auth Required |
+|---|---|---|---|---|
+| **Auth** | `POST` | `/api/v1/auth/register` | Register a new student account | No |
+| **Auth** | `POST` | `/api/v1/auth/login` | Login with email/password and obtain JWT | No |
+| **Auth** | `POST` | `/api/v1/auth/google` | Google One-Tap OAuth Login | No |
+| **Documents** | `POST` | `/api/v1/documents/upload` | Upload & vectorize PDF, DOCX, PPTX, TXT | Yes |
+| **Documents** | `GET` | `/api/v1/documents/` | List all uploaded documents for current user | Yes |
+| **Documents** | `DELETE`| `/api/v1/documents/{doc_id}` | Remove document and its ChromaDB vector index | Yes |
+| **Chat** | `POST` | `/api/v1/chat/message` | Context-aware RAG conversation grounded in notes | Yes |
+| **Chat** | `GET` | `/api/v1/chat/history` | Retrieve previous conversation sessions | Yes |
+| **Quiz** | `POST` | `/api/v1/quiz/generate` | Auto-generate multiple-choice quiz from topic/doc | Yes |
+| **Quiz** | `POST` | `/api/v1/quiz/submit` | Submit answers and receive score + analysis | Yes |
+| **Flashcards**| `POST` | `/api/v1/flashcards/generate`| Generate 3D study flashcards from syllabus | Yes |
+| **Planner** | `POST` | `/api/v1/planner/generate`| Generate AI study schedule & milestones | Yes |
+| **Career** | `POST` | `/api/v1/career/recommend`| AI recommendations for careers, skills & roadmap | Yes |
+| **Analytics**| `GET` | `/api/v1/analytics/dashboard`| Aggregate study metrics & quiz history | Yes |
+
+---
+
+## 🗺️ Roadmap
+
+- [x] **v1.0 (Core Release)**
+  - [x] Multi-format document parser (PDF, DOCX, PPTX, TXT)
+  - [x] RAG vector retrieval via ChromaDB and Google Gemini
+  - [x] Automated quiz generator with customizable difficulty levels
+  - [x] 3D flip-card study flashcard deck
+  - [x] AI study planner and task scheduler
+  - [x] Career pathway and industry skills advisor
+  - [x] PWA offline caching & mobile install support
+  - [x] In-memory database fallback for zero-config startup
+  - [x] Full Docker & Docker Compose containerization
+- [ ] **v1.1 (Upcoming)**
+  - [ ] 🎙️ Voice Q&A Mode (Speech-to-Text & Text-to-Speech)
+  - [ ] 📄 Direct export of study notes & quizzes to Notion / Markdown
+  - [ ] 🌐 Multi-language translation for study materials
+- [ ] **v2.0 (Planned)**
+  - [ ] 👥 Collaborative study rooms and peer-to-peer flashcard sharing
+  - [ ] 📊 Spaced Repetition Algorithm (SM-2 / Anki-style scheduling)
+  - [ ] 📱 Native React Native iOS & Android application
+
+---
+
+## 📈 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion&type=Date)](https://star-history.com/#NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion&Date)
+
+---
+
+## 🤝 Contributing
+
+Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**!
+
+1. Check our [Contributing Guide](CONTRIBUTING.md) for standards and setup instructions.
+2. Read our [Code of Conduct](CODE_OF_CONDUCT.md).
+3. Check open issues for [Good First Issues](https://github.com/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion/issues).
+
+---
+
+## 👨‍💻 Author
 
 **B. Nagaraju**  
-B.Tech Computer Science and Engineering  
-KLH University, Hyderabad  
+*Computer Science and Engineering*  
+*KLH University, Hyderabad*  
+- GitHub: [@NagarajuMudhiraj](https://github.com/NagarajuMudhiraj)
 
 ---
 
-## 📜 License
+## 📄 License
 
-This project is licensed under the **MIT License**.
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
