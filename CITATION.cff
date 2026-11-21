@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software or cite it in your work, please cite it using the metadata below."
+authors:
+  - family-names: "Mudhiraj"
+    given-names: "Nagaraju"
+    affiliation: "KLH University, Hyderabad"
+title: "AI Intelligent Student Learning Companion: A Full-Stack Academic Copilot Powered by Google Gemini and ChromaDB RAG"
+version: 1.0.0
+date-released: 2026-11-21
+url: "https://github.com/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion"
+repository-code: "https://github.com/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion"
+abstract: >-
+  An open-source, full-stack AI-driven student learning assistant that ingests multi-format
+  academic documents (PDF, DOCX, PPTX, TXT) and generates grounded RAG conversations,
+  adaptive Bloom's taxonomy quizzes, 3D study flashcards, dynamic revision timetables,
+  and career skill recommendations using Google Gemini, FastAPI, and React 19.
+keywords:
+  - "retrieval-augmented-generation"
+  - "rag"
+  - "generative-ai"
+  - "google-gemini"
+  - "chromadb"
+  - "fastapi"
+  - "react19"
+  - "edtech"
+  - "student-assistant"
+  - "quiz-generator"
+  - "flashcards"
+license: MIT

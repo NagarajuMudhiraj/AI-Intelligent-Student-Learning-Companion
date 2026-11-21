@@ -1,12 +1,19 @@
 <div align="center">
 
+<a href="https://nagarajumudhiraj.github.io/AI-Intelligent-Student-Learning-Companion/">
+  <img src="assets/hero-banner.svg" alt="AI Intelligent Student Learning Companion Hero Banner" width="100%" />
+</a>
+
+<br /><br />
+
 # 🎓 AI Intelligent Student Learning Companion
 
 **Next-Generation Personalized Academic Copilot Powered by Google Gemini, RAG & Vector Search**
 
+[![Interactive Architecture](https://img.shields.io/badge/Architecture-Interactive_Viewer-7928CA?style=for-the-badge&logo=googlechrome&logoColor=white)](https://nagarajumudhiraj.github.io/AI-Intelligent-Student-Learning-Companion/)
 [![GitHub Stars](https://img.shields.io/github/stars/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion?style=for-the-badge&logo=github&color=FFD700)](https://github.com/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion?style=for-the-badge&logo=github&color=60A5FA)](https://github.com/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion/network/members)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](CONTRIBUTING.md)
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
@@ -98,7 +105,7 @@ flowchart TD
     DBLayer --> Mongo
 ```
 
-> 📐 **Interactive Architecture View:** Explore the comprehensive system diagram with live node inspections in [`student-companion-architecture.html`](student-companion-architecture.html).
+> 📐 **Interactive Architecture View:** Explore the live full-screen system diagram with node inspections, search, and themes directly on [**GitHub Pages**](https://nagarajumudhiraj.github.io/AI-Intelligent-Student-Learning-Companion/) (or locally in [`student-companion-architecture.html`](student-companion-architecture.html)).
 
 ---
 
@@ -279,6 +286,22 @@ Contributions make the open-source community an amazing place to learn, inspire,
 *Computer Science and Engineering*  
 *KLH University, Hyderabad*  
 - GitHub: [@NagarajuMudhiraj](https://github.com/NagarajuMudhiraj)
+
+---
+
+## 📖 Citation
+
+If you use this project in your academic research, coursework, or software projects, please cite it using [`CITATION.cff`](CITATION.cff):
+
+```bibtex
+@software{Mudhiraj_AI_Student_Companion_2026,
+  author = {Mudhiraj, Nagaraju},
+  title = {{AI Intelligent Student Learning Companion: A Full-Stack Academic Copilot Powered by Google Gemini and ChromaDB RAG}},
+  month = {11},
+  year = {2026},
+  url = {https://github.com/NagarajuMudhiraj/AI-Intelligent-Student-Learning-Companion}
+}
+```
 
 ---
 
